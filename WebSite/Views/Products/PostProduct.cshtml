@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PostProduct</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <fieldset>
+                <legend>Add Product</legend>
+                <div>
+                    <label for="Name">Name: </label>
+                    <input type="text" name="Name" value="" />
+                </div>
+                <div>
+                    <label for="Category">Category: </label>
+                    <input type="text" name="Category" value="" />
+                </div>
+                <div>
+                    <label for="Price">Price: </label>
+                    <input type="text" name="Price" value="" />
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <input type="submit" value="Submit" class="submit" />
+                </div>
+            </fieldset>
+        </form>
+        @{
+        if (IsPost)
+            {
+                string Name = Request.Form["Name"];
+                string Category = Request.Form["Category"];
+                int Price = Request.Form["Price"].AsInt();
+
+                <text>
+                    You entered: <br />
+                    Company Name: @Name <br />
+                    Contact Name: @Category <br />
+                    Employee Count: @Price <br />
+                </text>
+            }
+        }
+    </div>
+</body>
+</html>
